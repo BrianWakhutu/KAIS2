@@ -16,7 +16,7 @@ Public Class Birth
     Public Property Q_203_year As Integer
     Public Property Q_204 As Lookup
     Public Property Q_204_other As String
-    'Public Property Q_204 As Integer
+    Public Property Q_205 As Lookup
     'Public Property Q_204_other As String
     'Public Property Q_205 As Integer
     'Public Property Q_206 As Integer
