@@ -35,5 +35,5 @@ Thumbs.db
 
 # VS#
 ############
-/KAIS2/source/KaisII/KaisII/bin*
-/KAIS2/source/KaisII/KaisII/obj*
+/KAIS2/source/KaisII/KaisII/bin/*
+/KAIS2/source/KaisII/KaisII/obj/*
