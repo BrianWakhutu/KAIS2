@@ -78,6 +78,7 @@
   <ItemGroup>
     <Compile Include="Classes\Birth.vb" />
     <Compile Include="Classes\DataAccess.vb" />
+    <Compile Include="Classes\TestClass.vb" />
     <Compile Include="Components\Freetext.Designer.vb">
       <DependentUpon>Freetext.vb</DependentUpon>
     </Compile>
