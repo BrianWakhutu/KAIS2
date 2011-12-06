@@ -1,0 +1,292 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9DBDEE7B-11FF-458E-9900-CA15CF25898B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>KaisII.My.MyApplication</StartupObject>
+    <RootNamespace>KaisII</RootNamespace>
+    <AssemblyName>KaisII</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>KaisII.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>KaisII.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="KaisII, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <ExecutableExtension>.exe</ExecutableExtension>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\Birth.vb" />
+    <Compile Include="Classes\DataAccess.vb" />
+    <Compile Include="Components\Freetext.Designer.vb">
+      <DependentUpon>Freetext.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Freetext.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\UcComboWithSpecify.Designer.vb">
+      <DependentUpon>UcComboWithSpecify.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Components\UcComboWithSpecify.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\UcKAISDobPicker.Designer.vb">
+      <DependentUpon>UcKAISDobPicker.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Components\UcKAISDobPicker.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\Numeric.Designer.vb">
+      <DependentUpon>Numeric.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Numeric.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\uc301.Designer.vb">
+      <DependentUpon>uc301.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Components\uc301.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\ucDatevb.Designer.vb">
+      <DependentUpon>ucDatevb.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Components\ucDatevb.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\ucEndInterview.Designer.vb">
+      <DependentUpon>ucEndInterview.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Components\ucEndInterview.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\ucHouseholdMembers.Designer.vb">
+      <DependentUpon>ucHouseholdMembers.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Components\ucHouseholdMembers.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\ucLineNumber.Designer.vb">
+      <DependentUpon>ucLineNumber.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Components\ucLineNumber.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\ucMonthYear.Designer.vb">
+      <DependentUpon>ucMonthYear.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Components\ucMonthYear.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\ucMultivalue.Designer.vb">
+      <DependentUpon>ucMultivalue.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Components\ucMultivalue.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\ucNumericValue.Designer.vb">
+      <DependentUpon>ucNumericValue.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Components\ucNumericValue.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\ucOptionSingleDomain.Designer.vb">
+      <DependentUpon>ucOptionSingleDomain.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Components\ucOptionSingleDomain.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\ucSingleDomain.Designer.vb">
+      <DependentUpon>ucSingleDomain.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Components\ucSingleDomain.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\ucSplash.Designer.vb">
+      <DependentUpon>ucSplash.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Components\ucSplash.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\ucVisits.Designer.vb">
+      <DependentUpon>ucVisits.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Components\ucVisits.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Dialogs\Interview.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\Interview.Designer.vb">
+      <DependentUpon>Interview.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\ModGlobalVars.vb" />
+    <Compile Include="Modules\ModUtility.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Components\UcBirths.Designer.vb">
+      <DependentUpon>UcBirths.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Components\UcBirths.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Components\Freetext.resx">
+      <DependentUpon>Freetext.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\UcComboWithSpecify.resx">
+      <DependentUpon>UcComboWithSpecify.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\UcKAISDobPicker.resx">
+      <DependentUpon>UcKAISDobPicker.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\Numeric.resx">
+      <DependentUpon>Numeric.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\uc301.resx">
+      <DependentUpon>uc301.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\ucDatevb.resx">
+      <DependentUpon>ucDatevb.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\ucEndInterview.resx">
+      <DependentUpon>ucEndInterview.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\ucHouseholdMembers.resx">
+      <DependentUpon>ucHouseholdMembers.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\ucLineNumber.resx">
+      <DependentUpon>ucLineNumber.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\ucMonthYear.resx">
+      <DependentUpon>ucMonthYear.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\ucMultivalue.resx">
+      <DependentUpon>ucMultivalue.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\ucNumericValue.resx">
+      <DependentUpon>ucNumericValue.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\ucOptionSingleDomain.resx">
+      <DependentUpon>ucOptionSingleDomain.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\ucSingleDomain.resx">
+      <DependentUpon>ucSingleDomain.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\ucSplash.resx">
+      <DependentUpon>ucSplash.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\ucVisits.resx">
+      <DependentUpon>ucVisits.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\Interview.resx">
+      <DependentUpon>Interview.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\UcBirths.resx">
+      <DependentUpon>UcBirths.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lightning.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
