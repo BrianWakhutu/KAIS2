@@ -615,7 +615,6 @@
                 iSkp_SkipToField = Value
             End Set
         End Property
-    End Class
     Public Class Fieldtypes
         Public Enum FieldType
             Freetext = 1

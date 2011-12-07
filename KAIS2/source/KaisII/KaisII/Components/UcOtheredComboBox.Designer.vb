@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class UcComboWithSpecify
+Partial Class UcOtheredComboBox
     Inherits System.Windows.Forms.UserControl
 
     'UserControl overrides dispose to clean up the component list.
@@ -25,6 +25,7 @@ Partial Class UcComboWithSpecify
         Me.vLookupComboBox = New System.Windows.Forms.ComboBox()
         Me.vSpecifyLabel = New System.Windows.Forms.Label()
         Me.vSpecifyTextBox = New System.Windows.Forms.TextBox()
+        Me.vLabel = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'vLookupComboBox
@@ -32,19 +33,19 @@ Partial Class UcComboWithSpecify
         Me.vLookupComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.vLookupComboBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.vLookupComboBox.FormattingEnabled = True
-        Me.vLookupComboBox.Location = New System.Drawing.Point(0, 3)
+        Me.vLookupComboBox.Location = New System.Drawing.Point(7, 32)
         Me.vLookupComboBox.Name = "vLookupComboBox"
         Me.vLookupComboBox.Size = New System.Drawing.Size(347, 28)
-        Me.vLookupComboBox.TabIndex = 0
+        Me.vLookupComboBox.TabIndex = 1
         '
         'vSpecifyLabel
         '
         Me.vSpecifyLabel.AutoSize = True
         Me.vSpecifyLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.vSpecifyLabel.Location = New System.Drawing.Point(353, 7)
+        Me.vSpecifyLabel.Location = New System.Drawing.Point(360, 35)
         Me.vSpecifyLabel.Name = "vSpecifyLabel"
         Me.vSpecifyLabel.Size = New System.Drawing.Size(68, 20)
-        Me.vSpecifyLabel.TabIndex = 1
+        Me.vSpecifyLabel.TabIndex = 2
         Me.vSpecifyLabel.Text = "Specify"
         '
         'vSpecifyTextBox
@@ -53,21 +54,32 @@ Partial Class UcComboWithSpecify
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.vSpecifyTextBox.Enabled = False
         Me.vSpecifyTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.vSpecifyTextBox.Location = New System.Drawing.Point(427, 4)
+        Me.vSpecifyTextBox.Location = New System.Drawing.Point(427, 34)
         Me.vSpecifyTextBox.Name = "vSpecifyTextBox"
-        Me.vSpecifyTextBox.Size = New System.Drawing.Size(401, 26)
-        Me.vSpecifyTextBox.TabIndex = 2
+        Me.vSpecifyTextBox.Size = New System.Drawing.Size(442, 26)
+        Me.vSpecifyTextBox.TabIndex = 3
         '
-        'UcComboWithSpecify
+        'vLabel
+        '
+        Me.vLabel.AutoSize = True
+        Me.vLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.vLabel.Location = New System.Drawing.Point(3, 9)
+        Me.vLabel.Name = "vLabel"
+        Me.vLabel.Size = New System.Drawing.Size(112, 20)
+        Me.vLabel.TabIndex = 0
+        Me.vLabel.Text = "LookupLabel"
+        '
+        'UcOtheredComboBox
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Controls.Add(Me.vLabel)
         Me.Controls.Add(Me.vSpecifyTextBox)
         Me.Controls.Add(Me.vSpecifyLabel)
         Me.Controls.Add(Me.vLookupComboBox)
-        Me.Name = "UcComboWithSpecify"
-        Me.Size = New System.Drawing.Size(831, 33)
+        Me.Name = "UcOtheredComboBox"
+        Me.Size = New System.Drawing.Size(872, 70)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -75,5 +87,6 @@ Partial Class UcComboWithSpecify
     Friend WithEvents vLookupComboBox As System.Windows.Forms.ComboBox
     Friend WithEvents vSpecifyLabel As System.Windows.Forms.Label
     Friend WithEvents vSpecifyTextBox As System.Windows.Forms.TextBox
+    Friend WithEvents vLabel As System.Windows.Forms.Label
 
 End Class

@@ -78,22 +78,37 @@
   <ItemGroup>
     <Compile Include="Classes\Birth.vb" />
     <Compile Include="Classes\DataAccess.vb" />
+    <Compile Include="Classes\KaisDate.vb" />
+    <Compile Include="Classes\OtheredLookup.vb" />
     <Compile Include="Components\Freetext.Designer.vb">
       <DependentUpon>Freetext.vb</DependentUpon>
     </Compile>
     <Compile Include="Components\Freetext.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Components\UcComboWithSpecify.Designer.vb">
-      <DependentUpon>UcComboWithSpecify.vb</DependentUpon>
+    <Compile Include="Components\UcKaisControl.vb" />
+    <Compile Include="Components\UcKaisTextBox.Designer.vb">
+      <DependentUpon>UcKaisTextBox.vb</DependentUpon>
     </Compile>
-    <Compile Include="Components\UcComboWithSpecify.vb">
+    <Compile Include="Components\UcKaisTextBox.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Components\UcKAISDobPicker.Designer.vb">
-      <DependentUpon>UcKAISDobPicker.vb</DependentUpon>
+    <Compile Include="Components\UcLookupComboBox.Designer.vb">
+      <DependentUpon>UcLookupComboBox.vb</DependentUpon>
     </Compile>
-    <Compile Include="Components\UcKAISDobPicker.vb">
+    <Compile Include="Components\UcLookupComboBox.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\UcOtheredComboBox.Designer.vb">
+      <DependentUpon>UcOtheredComboBox.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Components\UcOtheredComboBox.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\UcKaisDatePicker.Designer.vb">
+      <DependentUpon>UcKaisDatePicker.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Components\UcKaisDatePicker.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Components\Numeric.Designer.vb">
@@ -209,11 +224,17 @@
     <EmbeddedResource Include="Components\Freetext.resx">
       <DependentUpon>Freetext.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Components\UcComboWithSpecify.resx">
-      <DependentUpon>UcComboWithSpecify.vb</DependentUpon>
+    <EmbeddedResource Include="Components\UcKaisTextBox.resx">
+      <DependentUpon>UcKaisTextBox.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Components\UcKAISDobPicker.resx">
-      <DependentUpon>UcKAISDobPicker.vb</DependentUpon>
+    <EmbeddedResource Include="Components\UcLookupComboBox.resx">
+      <DependentUpon>UcLookupComboBox.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\UcOtheredComboBox.resx">
+      <DependentUpon>UcOtheredComboBox.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\UcKaisDatePicker.resx">
+      <DependentUpon>UcKaisDatePicker.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Components\Numeric.resx">
       <DependentUpon>Numeric.vb</DependentUpon>
