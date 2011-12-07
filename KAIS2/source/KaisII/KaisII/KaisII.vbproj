@@ -78,8 +78,12 @@
   <ItemGroup>
     <Compile Include="Classes\Birth.vb" />
     <Compile Include="Classes\DataAccess.vb" />
+<<<<<<< HEAD
     <Compile Include="Classes\KaisDate.vb" />
     <Compile Include="Classes\OtheredLookup.vb" />
+=======
+    <Compile Include="Classes\TestClass.vb" />
+>>>>>>> 36c77f5a1c1722d9a745a5245ec0c65d2a4c92ca
     <Compile Include="Components\Freetext.Designer.vb">
       <DependentUpon>Freetext.vb</DependentUpon>
     </Compile>
