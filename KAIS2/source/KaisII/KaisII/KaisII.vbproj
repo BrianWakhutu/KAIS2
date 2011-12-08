@@ -78,6 +78,7 @@
   <ItemGroup>
     <Compile Include="Classes\Birth.vb" />
     <Compile Include="Classes\DataAccess.vb" />
+    <Compile Include="Classes\SexPartnerMatrix.vb" />
     <Compile Include="Components\Freetext.Designer.vb">
       <DependentUpon>Freetext.vb</DependentUpon>
     </Compile>
@@ -154,6 +155,12 @@
       <DependentUpon>ucOptionSingleDomain.vb</DependentUpon>
     </Compile>
     <Compile Include="Components\ucOptionSingleDomain.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\ucSexPartnerMatrix.Designer.vb">
+      <DependentUpon>ucSexPartnerMatrix.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Components\ucSexPartnerMatrix.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Components\ucSingleDomain.Designer.vb">
@@ -244,6 +251,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Components\ucOptionSingleDomain.resx">
       <DependentUpon>ucOptionSingleDomain.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\ucSexPartnerMatrix.resx">
+      <DependentUpon>ucSexPartnerMatrix.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Components\ucSingleDomain.resx">
       <DependentUpon>ucSingleDomain.vb</DependentUpon>

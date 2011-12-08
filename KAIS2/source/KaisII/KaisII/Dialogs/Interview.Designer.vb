@@ -287,6 +287,7 @@ Partial Class Interview
 
     End Sub
     Friend WithEvents UcBirths1 As KaisII.UcBirths
+    Friend WithEvents ucSexPartnerMatrix1 As KaisII.ucSexPartnerMatrix
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
     Friend WithEvents cmdBack As System.Windows.Forms.Button
     Friend WithEvents cmdNext As System.Windows.Forms.Button

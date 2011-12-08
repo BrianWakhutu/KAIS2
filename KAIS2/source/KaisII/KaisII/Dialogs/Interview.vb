@@ -175,7 +175,7 @@ Public Class Interview
                 'Load the first item on the Back stack
                 oCurField = CType(sckPoppedQuestions.Peek, Field) '
             Else
-                oCurField = ReturnCurrentFiend(29, True)
+                oCurField = ReturnCurrentFiend(100, True)
                 'oCurField = LoadField(117, True, iFormId)
             End If
             Exit Sub
@@ -365,6 +365,8 @@ Public Class Interview
                 'new code
             Case 30
                 PopulateBirthsUI()
+            Case 100
+                PopulateSexPartnerMatrixUI()
         End Select
 
     End Sub
@@ -586,6 +588,21 @@ Public Class Interview
             Me.ptyCurrentControl = .Name
         End With
     End Sub
+    'new code to load child matrix control
+    Public Sub PopulateSexPartnerMatrixUI()
+        Me.ucSexPartnerMatrix1 = New ucSexPartnerMatrix(oCurField)
+        Me.Panel1.Controls.Add(Me.ucSexPartnerMatrix1)
+        With ucSexPartnerMatrix1
+            .Visible = True
+            .BringToFront()
+            .Dock = DockStyle.Fill
+            Me.ptyCurrentControl = .Name
+        End With
+
+
+
+    End Sub
+
 
     Public Sub PopulateucLineNumber()
         With UcLineNumber1

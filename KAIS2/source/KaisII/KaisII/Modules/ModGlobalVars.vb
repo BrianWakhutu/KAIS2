@@ -15,7 +15,7 @@ Module ModGlobalVars
     Public _Fields As List(Of Field)
     Public sAnswerValue As String
     Public sAppName As String = "KAIS Datac collection System"
-    Public _AppLocalConn As New SqlConnection("Data Source=HP-PC\SQLEXPRESS;Initial Catalog=KaisII;Persist Security Info=True;User ID=sa;Password=Maun2806")
+    Public _AppLocalConn As New SqlConnection("Data Source=WAKHUTU-PC\SQLEXPRESS;Initial Catalog=KaisII;Persist Security Info=True;User ID=sa;Password=s3tpassw0rd")
     Public Enum SelectedForm
         Household = 2
         Children = 3
