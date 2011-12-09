@@ -73,33 +73,30 @@ Partial Class UcKaisDatePicker
         'vDayLabel
         '
         Me.vDayLabel.AutoSize = True
-        Me.vDayLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.vDayLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.vDayLabel.Location = New System.Drawing.Point(11, 34)
         Me.vDayLabel.Name = "vDayLabel"
-        Me.vDayLabel.Size = New System.Drawing.Size(42, 22)
+        Me.vDayLabel.Size = New System.Drawing.Size(40, 20)
         Me.vDayLabel.TabIndex = 1
         Me.vDayLabel.Text = "Day"
         '
         'vMonthLabel
         '
         Me.vMonthLabel.AutoSize = True
-        Me.vMonthLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.vMonthLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.vMonthLabel.Location = New System.Drawing.Point(142, 34)
         Me.vMonthLabel.Name = "vMonthLabel"
-        Me.vMonthLabel.Size = New System.Drawing.Size(61, 22)
+        Me.vMonthLabel.Size = New System.Drawing.Size(59, 20)
         Me.vMonthLabel.TabIndex = 3
         Me.vMonthLabel.Text = "Month"
         '
         'vYearLabel
         '
         Me.vYearLabel.AutoSize = True
-        Me.vYearLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.vYearLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.vYearLabel.Location = New System.Drawing.Point(292, 34)
         Me.vYearLabel.Name = "vYearLabel"
-        Me.vYearLabel.Size = New System.Drawing.Size(49, 22)
+        Me.vYearLabel.Size = New System.Drawing.Size(47, 20)
         Me.vYearLabel.TabIndex = 5
         Me.vYearLabel.Text = "Year"
         '

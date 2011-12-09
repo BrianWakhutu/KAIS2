@@ -286,7 +286,7 @@ Partial Class Interview
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents UcBirths1 As KaisII.UcBirths
+    Friend WithEvents UcBirths1 As KaisII.UcMatrix
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
     Friend WithEvents cmdBack As System.Windows.Forms.Button
     Friend WithEvents cmdNext As System.Windows.Forms.Button

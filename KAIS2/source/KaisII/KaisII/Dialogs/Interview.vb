@@ -364,7 +364,7 @@ Public Class Interview
                 PopulateEndInterview()
                 'new code
             Case 30
-                PopulateBirthsUI()
+                PopulateMatrixUI()
         End Select
 
     End Sub
@@ -576,8 +576,8 @@ Public Class Interview
     End Sub
 
     'new code
-    Public Sub PopulateBirthsUI()
-        Me.UcBirths1 = New UcBirths(oCurField)
+    Public Sub PopulateMatrixUI()
+        Me.UcBirths1 = New UcMatrix(oCurField, "10")
         Me.Panel1.Controls.Add(Me.UcBirths1)
         With UcBirths1
             .Visible = True
@@ -999,7 +999,7 @@ Public Class Interview
                     '    MsgBox("No Data in the list .", , sAppName)
                     '    Exit Sub
                     'End If
-                    .SaveBirths()
+                    .SaveMatrix()
                     sckAnsweredQuestions.Push(oCurField)
                     GetNextQuestion()
                 End With

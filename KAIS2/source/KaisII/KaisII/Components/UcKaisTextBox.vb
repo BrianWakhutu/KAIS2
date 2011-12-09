@@ -6,6 +6,11 @@ Public Class UcKaisTextBox
     Private fld As Field
     Public Property UpperCase As Boolean = False
 
+    Public Sub New()
+        InitializeComponent()
+        Me.Size = New System.Drawing.Size(985, 65)
+    End Sub
+
     Public ReadOnly Property TextBox As TextBox
         Get
             Return vTextBox
@@ -36,14 +41,6 @@ Public Class UcKaisTextBox
         Me.OnKeyPress(Nothing)
     End Sub
 
-    Public Function GetRealValue() As Object Implements UcKaisControl.GetRealValue
-        Return IIf(vTextBox.Text.Equals(""), Nothing, vTextBox.Text)
-    End Function
-
-    Public Function GetSkipValue() As String Implements UcKaisControl.GetSkipValue
-        Return GetRealValue()
-    End Function
-
     Public ReadOnly Property Label As System.Windows.Forms.Label Implements UcKaisControl.Label
         Get
             Return vLabel
@@ -60,5 +57,15 @@ Public Class UcKaisTextBox
 
     Public Sub SetToDefault() Implements UcKaisControl.SetToDefault
         vTextBox.Clear()
+    End Sub
+
+    Public Function GetRealValue() As Object Implements UcKaisControl.GetValue
+        Return IIf(vTextBox.Text.Equals(""), Nothing, vTextBox.Text)
+    End Function
+
+    Public Sub SetRealValue(ByVal value As Object) Implements UcKaisControl.SetValue
+        If value IsNot Nothing Then
+            vTextBox.Text = TryCast(value, String)
+        End If
     End Sub
 End Class

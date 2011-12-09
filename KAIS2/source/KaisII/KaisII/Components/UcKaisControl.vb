@@ -5,9 +5,9 @@ Public Interface UcKaisControl
     ReadOnly Property Label As Label
 
     Sub SetToDefault()
-    Function GetSkipValue() As String
-    Function GetRealValue() As Object
+    Function GetValue() As Object
     Sub SetLabelText(ByVal text As String)
     Sub SetDataSource(ByVal dataSource As Object)
+    Sub SetValue(ByVal value As Object)
 
 End Interface

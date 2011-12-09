@@ -17,6 +17,7 @@ Public Class UcKaisDatePicker
     Public Sub New()
         InitializeComponent()
         SetToDefault()
+        Me.Size = New System.Drawing.Size(985, 65)
     End Sub
 
     Public Property Field As Field Implements UcKaisControl.Field
@@ -79,6 +80,7 @@ Public Class UcKaisDatePicker
                 vDayNUD.Value = MaxDays
             End If
         End If
+        Me.OnKeyPress(Nothing)
     End Sub
 
     Private Sub vMonthNUD_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles vMonthNUD.ValueChanged
@@ -90,6 +92,7 @@ Public Class UcKaisDatePicker
                 vMonthNUD.Value = MaxMonths
             End If
         End If
+        Me.OnKeyPress(Nothing)
     End Sub
 
     Private Sub vYearNUD_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles vYearNUD.ValueChanged
@@ -101,15 +104,8 @@ Public Class UcKaisDatePicker
                 vYearNUD.Value = MaxYears
             End If
         End If
+        Me.OnKeyPress(Nothing)
     End Sub
-
-    Public Function GetRealValue() As Object Implements UcKaisControl.GetRealValue
-        Return New KAISDate(vDayNUD.Value, vMonthNUD.Value, vYearNUD.Value)
-    End Function
-
-    Public Function GetSkipValue() As String Implements UcKaisControl.GetSkipValue
-        Return New KAISDate(vDayNUD.Value, vMonthNUD.Value, vYearNUD.Value).ToString()
-    End Function
 
     Public Sub SetDataSource(ByVal dataSource As Object) Implements UcKaisControl.SetDataSource
         'do nothing
@@ -128,6 +124,20 @@ Public Class UcKaisDatePicker
         vYearNUD.Maximum = IIf(MaxYears > UnknownYears, MaxYears, UnknownYears)
         vDayNUD.Value = UnknownDays
         vMonthNUD.Value = UnknownMonths
-        vMonthNUD.Value = UnknownYears
+        vYearNUD.Value = UnknownYears
+    End Sub
+
+
+    Public Function GetRealValue() As Object Implements UcKaisControl.GetValue
+        Return New KAISDate(vDayNUD.Value, vMonthNUD.Value, vYearNUD.Value)
+    End Function
+
+    Public Sub SetRealValue(ByVal value As Object) Implements UcKaisControl.SetValue
+        Dim kd As KAISDate = TryCast(value, KAISDate)
+        If kd IsNot Nothing Then
+            vDayNUD.Value = kd.Day
+            vMonthNUD.Value = kd.Month
+            vYearNUD.Value = kd.Year
+        End If
     End Sub
 End Class

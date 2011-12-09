@@ -3,8 +3,12 @@
 Public Class UcLookupComboBox
     Implements UcKaisControl
 
-
     Private fld As Field
+
+    Public Sub New()
+        InitializeComponent()
+        Me.Size = New System.Drawing.Size(985, 65)
+    End Sub
 
     Public Property Field As FormGenClasses.Field Implements UcKaisControl.Field
         Get
@@ -33,26 +37,9 @@ Public Class UcLookupComboBox
         End Get
     End Property
 
-    Private Sub vLookupComboBox_SelectedValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles vLookupComboBox.SelectedValueChanged
-        Me.OnKeyPress(Nothing)
-    End Sub
-
     Public Sub SetToDefault() Implements UcKaisControl.SetToDefault
         vLookupComboBox.SelectedItem = Nothing
     End Sub
-
-    Public Function GetRealValue() As Object Implements UcKaisControl.GetRealValue
-        Return CType(vLookupComboBox.SelectedItem, Lookup)
-    End Function
-
-    Public Function GetSkipValue() As String Implements UcKaisControl.GetSkipValue
-        Dim l As Lookup = CType(GetRealValue(), Lookup)
-        Dim selectedValue As String = Nothing
-        If l IsNot Nothing Then
-            selectedValue = l.Lkp_mapping
-        End If
-        Return selectedValue
-    End Function
 
     Public Sub SetDataSource(ByVal dataSource As Object) Implements UcKaisControl.SetDataSource
         vLookupComboBox.DataSource = dataSource
@@ -60,5 +47,20 @@ Public Class UcLookupComboBox
 
     Public Sub SetLabelText(ByVal text As String) Implements UcKaisControl.SetLabelText
         vLabel.Text = text
+    End Sub
+
+    Public Function GetRealValue() As Object Implements UcKaisControl.GetValue
+        Return CType(vLookupComboBox.SelectedItem, Lookup)
+    End Function
+
+    Private Sub vLookupComboBox_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles vLookupComboBox.SelectedIndexChanged
+        Me.OnKeyPress(Nothing)
+    End Sub
+
+    Public Sub SetRealValue(ByVal value As Object) Implements UcKaisControl.SetValue
+        Dim l As Lookup = TryCast(value, Lookup)
+        If l IsNot Nothing Then
+            vLookupComboBox.SelectedItem = l
+        End If
     End Sub
 End Class

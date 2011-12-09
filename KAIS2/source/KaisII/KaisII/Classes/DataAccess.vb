@@ -622,7 +622,7 @@ Namespace FormGenClasses
             End Set
         End Property
         'new code
-        Public Property Skp_Enabled As Boolean
+        Public Property Skp_Action As String
         Public Property Skp_FromField As Field
         Public Property Skp_ToField As Field
     End Class
@@ -632,8 +632,10 @@ Namespace FormGenClasses
             Numeric = 2
             [date] = 3
             Lookup = 5
+            OtheredLookup = 6
             Multivalue = 7
             Time = 32
+            DateTime = 20
         End Enum
     End Class
     Public Class DataAccess
@@ -932,8 +934,8 @@ Namespace FormGenClasses
                     .Skp_FieldNo = r("Skp_FieldNo")
                     .Skp_Operator = r("Skp_Operator")
                     .Skp_SkipToField = r("Skp_SkipToField")
-                    .Skp_FieldValue = r("Skp_FieldValue")
-                    .Skp_Enabled = IIf(r("Skp_Enable") Is DBNull.Value, Nothing, r("Skp_Enable"))
+                    .Skp_FieldValue = IIf(r("Skp_FieldValue") Is DBNull.Value, Nothing, r("Skp_FieldValue"))
+                    .Skp_Action = IIf(r("Skp_Action") Is DBNull.Value, Nothing, r("Skp_Action"))
                     .Skp_FromField = fld
                 End With
                 oTempCol.Add(oskp)

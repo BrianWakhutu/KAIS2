@@ -5,6 +5,11 @@ Public Class UcOtheredComboBox
 
     Private fld As Field
 
+    Public Sub New()
+        InitializeComponent()
+        Me.Size = New System.Drawing.Size(985, 65)
+    End Sub
+
     Public Property Field As FormGenClasses.Field Implements UcKaisControl.Field
         Get
             Return fld
@@ -42,20 +47,8 @@ Public Class UcOtheredComboBox
                 vSpecifyTextBox.Text = String.Empty
             End If
         End If
+        Me.OnKeyPress(Nothing)
     End Sub
-
-    Public Function GetRealValue() As Object Implements UcKaisControl.GetRealValue
-        Return New OtheredLookup(CType(vLookupComboBox.SelectedItem, Lookup), vSpecifyTextBox.Text)
-    End Function
-
-    Public Function GetSkipValue() As String Implements UcKaisControl.GetSkipValue
-        Dim l As Lookup = CType(GetRealValue(), Lookup)
-        Dim selectedValue As String = Nothing
-        If l IsNot Nothing Then
-            selectedValue = l.Lkp_mapping
-        End If
-        Return selectedValue
-    End Function
 
     Public ReadOnly Property Label As System.Windows.Forms.Label Implements UcKaisControl.Label
         Get
@@ -74,5 +67,21 @@ Public Class UcOtheredComboBox
     Public Sub SetToDefault() Implements UcKaisControl.SetToDefault
         vLookupComboBox.SelectedItem = Nothing
         vSpecifyTextBox.Clear()
+    End Sub
+
+    Public Function GetRealValue() As Object Implements UcKaisControl.GetValue
+        Return New OtheredLookup(CType(vLookupComboBox.SelectedItem, Lookup), vSpecifyTextBox.Text)
+    End Function
+
+    Private Sub vSpecifyTextBox_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles vSpecifyTextBox.TextChanged
+        Me.OnKeyPress(Nothing)
+    End Sub
+
+    Public Sub SetRealValue(ByVal value As Object) Implements UcKaisControl.SetValue
+        Dim ol As OtheredLookup = TryCast(value, OtheredLookup)
+        If ol IsNot Nothing Then
+            vLookupComboBox.SelectedItem = ol.Lookup
+            SpecifyTextBox.Text = ol.Other
+        End If
     End Sub
 End Class
