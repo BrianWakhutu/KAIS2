@@ -15,6 +15,21 @@
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <PlatformTarget>x86</PlatformTarget>
@@ -76,25 +91,45 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\Birth.vb" />
     <Compile Include="Classes\DataAccess.vb" />
-    <Compile Include="Classes\SexPartnerMatrix.vb" />
+    <Compile Include="Classes\KaisDate.vb" />
+    <Compile Include="Classes\NumberValuedComboBox.vb" />
+    <Compile Include="Classes\OtheredLookup.vb" />
     <Compile Include="Components\Freetext.Designer.vb">
       <DependentUpon>Freetext.vb</DependentUpon>
     </Compile>
     <Compile Include="Components\Freetext.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Components\UcComboWithSpecify.Designer.vb">
-      <DependentUpon>UcComboWithSpecify.vb</DependentUpon>
+    <Compile Include="Components\UcKaisControl.vb" />
+    <Compile Include="Components\UcKaisTextBox.Designer.vb">
+      <DependentUpon>UcKaisTextBox.vb</DependentUpon>
     </Compile>
-    <Compile Include="Components\UcComboWithSpecify.vb">
+    <Compile Include="Components\UcKaisTextBox.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Components\UcKAISDobPicker.Designer.vb">
-      <DependentUpon>UcKAISDobPicker.vb</DependentUpon>
+    <Compile Include="Components\UcLookupComboBox.Designer.vb">
+      <DependentUpon>UcLookupComboBox.vb</DependentUpon>
     </Compile>
-    <Compile Include="Components\UcKAISDobPicker.vb">
+    <Compile Include="Components\UcLookupComboBox.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\UcNumberValuedComboBox.Designer.vb">
+      <DependentUpon>UcNumberValuedComboBox.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Components\UcNumberValuedComboBox.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\UcOtheredComboBox.Designer.vb">
+      <DependentUpon>UcOtheredComboBox.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Components\UcOtheredComboBox.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\UcKaisDatePicker.Designer.vb">
+      <DependentUpon>UcKaisDatePicker.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Components\UcKaisDatePicker.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Components\Numeric.Designer.vb">
@@ -205,10 +240,10 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Components\UcBirths.Designer.vb">
-      <DependentUpon>UcBirths.vb</DependentUpon>
+    <Compile Include="Components\UcMatrix.Designer.vb">
+      <DependentUpon>UcMatrix.vb</DependentUpon>
     </Compile>
-    <Compile Include="Components\UcBirths.vb">
+    <Compile Include="Components\UcMatrix.vb">
       <SubType>UserControl</SubType>
     </Compile>
   </ItemGroup>
@@ -216,11 +251,20 @@
     <EmbeddedResource Include="Components\Freetext.resx">
       <DependentUpon>Freetext.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Components\UcComboWithSpecify.resx">
-      <DependentUpon>UcComboWithSpecify.vb</DependentUpon>
+    <EmbeddedResource Include="Components\UcKaisTextBox.resx">
+      <DependentUpon>UcKaisTextBox.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Components\UcKAISDobPicker.resx">
-      <DependentUpon>UcKAISDobPicker.vb</DependentUpon>
+    <EmbeddedResource Include="Components\UcLookupComboBox.resx">
+      <DependentUpon>UcLookupComboBox.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\UcNumberValuedComboBox.resx">
+      <DependentUpon>UcNumberValuedComboBox.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\UcOtheredComboBox.resx">
+      <DependentUpon>UcOtheredComboBox.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\UcKaisDatePicker.resx">
+      <DependentUpon>UcKaisDatePicker.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Components\Numeric.resx">
       <DependentUpon>Numeric.vb</DependentUpon>
@@ -273,8 +317,8 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Components\UcBirths.resx">
-      <DependentUpon>UcBirths.vb</DependentUpon>
+    <EmbeddedResource Include="Components\UcMatrix.resx">
+      <DependentUpon>UcMatrix.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -282,6 +326,7 @@
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
     </None>
+    <None Include="My Project\DataSources\UcMatrix.datasource" />
     <None Include="My Project\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <CustomToolNamespace>My</CustomToolNamespace>
@@ -290,6 +335,28 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\lightning.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

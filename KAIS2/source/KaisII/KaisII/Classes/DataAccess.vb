@@ -621,6 +621,10 @@ Namespace FormGenClasses
                 iSkp_SkipToField = Value
             End Set
         End Property
+        'new code
+        Public Property Skp_Action As String
+        Public Property Skp_FromField As Field
+        Public Property Skp_ToField As Field
     End Class
     Public Class Fieldtypes
         Public Enum FieldType
@@ -628,8 +632,11 @@ Namespace FormGenClasses
             Numeric = 2
             [date] = 3
             Lookup = 5
+            OtheredLookup = 6
             Multivalue = 7
             Time = 32
+            DateTime = 20
+            numberValuedComboBox = 9
         End Enum
     End Class
     Public Class DataAccess
@@ -773,7 +780,7 @@ Namespace FormGenClasses
                         End If
 
                         If .Fld_HasSkip Then 'Load all the Skips for this field.
-                            .fld_Skips = LoadSkips(.Fld_No) 'Assign the skips to the querion.
+                            .fld_Skips = LoadSkips(oField) 'Assign the skips to the querion.
                         End If
                         'new code
                         .ChildList = LoadChildFields(oField)
@@ -855,7 +862,7 @@ Namespace FormGenClasses
                         End If
 
                         If .Fld_HasSkip Then 'Load all the Skips for this field.
-                            .fld_Skips = LoadSkips(.Fld_No) 'Assign the skips to the querion.
+                            .fld_Skips = LoadSkips(oField) 'Assign the skips to the querion.
                         End If
                     End With
                     childFieldList.Add(oField)
@@ -908,13 +915,13 @@ Namespace FormGenClasses
             'Return oTemplkp
         End Function
 
-        Public Shared Function LoadSkips(ByVal fldNo As Integer) As List(Of Skip)
+        Public Shared Function LoadSkips(ByVal fld As Field) As List(Of Skip)
             LoadSkips = Nothing
             Dim SqlCom As New SqlCommand()
             With SqlCom
                 .CommandText = "UP_LoadSkips"
                 .CommandType = CommandType.StoredProcedure
-                .Parameters.Add("@fieldNo", SqlDbType.Int, 4).Value = fldNo
+                .Parameters.Add("@fieldNo", SqlDbType.Int, 4).Value = fld.Fld_No
                 .Connection = _AppLocalConn
             End With
 
@@ -928,17 +935,53 @@ Namespace FormGenClasses
                     .Skp_FieldNo = r("Skp_FieldNo")
                     .Skp_Operator = r("Skp_Operator")
                     .Skp_SkipToField = r("Skp_SkipToField")
-                    .Skp_FieldValue = r("Skp_FieldValue")
+                    .Skp_FieldValue = IIf(r("Skp_FieldValue") Is DBNull.Value, Nothing, r("Skp_FieldValue"))
+                    .Skp_Action = IIf(r("Skp_Action") Is DBNull.Value, Nothing, r("Skp_Action"))
+                    .Skp_FromField = fld
                 End With
                 oTempCol.Add(oskp)
             Next
             Return oTempCol
+
         End Function
-        
+
+        Public Shared Function GetFieldByNo(ByVal fieldNo As Integer) As Field
+            If _Fields IsNot Nothing Then
+                For Each f As Field In _Fields
+                    If f.Fld_No = fieldNo Then
+                        Return f
+                    End If
+                    If f.ChildList IsNot Nothing Then
+                        For Each cf As Field In f.ChildList
+                            If cf.Fld_No = fieldNo Then
+                                Return cf
+                            End If
+                        Next
+                    End If
+                Next
+            End If
+            Return Nothing
+        End Function
+
+        Public Shared Sub SetSkipToFields()
+            For Each f As Field In _Fields
+                If f.fld_Skips IsNot Nothing Then
+                    For Each skp As Skip In f.fld_Skips
+                        skp.Skp_ToField = GetFieldByNo(skp.Skp_SkipToField)
+                    Next
+                End If
+                If f.ChildList IsNot Nothing Then
+                    For Each cf As Field In f.ChildList
+                        If cf.fld_Skips IsNot Nothing Then
+                            For Each skp As Skip In cf.fld_Skips
+                                skp.Skp_ToField = GetFieldByNo(skp.Skp_SkipToField)
+                            Next
+                        End If
+                    Next
+                End If
+            Next
+        End Sub
 
     End Class
-
-
-
 End Namespace
 

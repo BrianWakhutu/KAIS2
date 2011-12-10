@@ -364,9 +364,13 @@ Public Class Interview
                 PopulateEndInterview()
                 'new code
             Case 30
+<<<<<<< HEAD
                 PopulateBirthsUI()
             Case 100
                 PopulateSexPartnerMatrixUI()
+=======
+                PopulateMatrixUI()
+>>>>>>> BrianWakhutu/master
         End Select
 
     End Sub
@@ -578,8 +582,8 @@ Public Class Interview
     End Sub
 
     'new code
-    Public Sub PopulateBirthsUI()
-        Me.UcBirths1 = New UcBirths(oCurField)
+    Public Sub PopulateMatrixUI()
+        Me.UcBirths1 = New UcMatrix(oCurField, "10")
         Me.Panel1.Controls.Add(Me.UcBirths1)
         With UcBirths1
             .Visible = True
@@ -1016,7 +1020,7 @@ Public Class Interview
                     '    MsgBox("No Data in the list .", , sAppName)
                     '    Exit Sub
                     'End If
-                    .SaveBirths()
+                    .SaveMatrix()
                     sckAnsweredQuestions.Push(oCurField)
                     GetNextQuestion()
                 End With
@@ -1042,5 +1046,6 @@ Public Class Interview
     Private Sub Interview_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         HideControls()
         LoadData()
+        DataAccess.SetSkipToFields()
     End Sub
 End Class
