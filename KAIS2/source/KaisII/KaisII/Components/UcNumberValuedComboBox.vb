@@ -19,7 +19,7 @@ Public Class UcNumberValuedComboBox
     End Property
 
     Public Function GetRealValue() As Object Implements UcKaisControl.GetValue
-        Return New NumberValuedComboBox(CType(vLookupComboBox.SelectedItem, Lookup), vValueTextBox.Text)
+        Return New NumberValuedComboBox(CType(vLookupComboBox.SelectedItem, Lookup), vValueNumericUpDown.Value)
     End Function
 
     Public ReadOnly Property Label As System.Windows.Forms.Label Implements UcKaisControl.Label
@@ -38,15 +38,14 @@ Public Class UcNumberValuedComboBox
 
     Public Sub SetToDefault() Implements UcKaisControl.SetToDefault
         vLookupComboBox.SelectedItem = Nothing
-        vValueTextBox.Clear()
+        vValueNumericUpDown.Value = 0
 
     End Sub
     Public Sub SetRealValue(ByVal value As Object) Implements UcKaisControl.SetValue
         Dim nl As NumberValuedComboBox = TryCast(value, NumberValuedComboBox)
         If nl IsNot Nothing Then
             vLookupComboBox.SelectedItem = nl.LookUpValue
-
-            vValueTextBox.Text = nl.NumberLookUpValue
+            vValueNumericUpDown.Value = nl.NumberLookUpValue
 
         End If
     End Sub

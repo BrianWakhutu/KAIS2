@@ -23,9 +23,10 @@ Partial Class UcNumberValuedComboBox
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.vLabel = New System.Windows.Forms.Label()
-        Me.vValueTextBox = New System.Windows.Forms.TextBox()
         Me.vValueLabel = New System.Windows.Forms.Label()
         Me.vLookupComboBox = New System.Windows.Forms.ComboBox()
+        Me.vValueNumericUpDown = New System.Windows.Forms.NumericUpDown()
+        CType(Me.vValueNumericUpDown, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'vLabel
@@ -37,17 +38,6 @@ Partial Class UcNumberValuedComboBox
         Me.vLabel.Size = New System.Drawing.Size(112, 20)
         Me.vLabel.TabIndex = 4
         Me.vLabel.Text = "LookupLabel"
-        '
-        'vValueTextBox
-        '
-        Me.vValueTextBox.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.vValueTextBox.Enabled = False
-        Me.vValueTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.vValueTextBox.Location = New System.Drawing.Point(423, 34)
-        Me.vValueTextBox.Name = "vValueTextBox"
-        Me.vValueTextBox.Size = New System.Drawing.Size(372, 26)
-        Me.vValueTextBox.TabIndex = 7
         '
         'vValueLabel
         '
@@ -69,24 +59,33 @@ Partial Class UcNumberValuedComboBox
         Me.vLookupComboBox.Size = New System.Drawing.Size(347, 28)
         Me.vLookupComboBox.TabIndex = 5
         '
+        'vValueNumericUpDown
+        '
+        Me.vValueNumericUpDown.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.vValueNumericUpDown.Location = New System.Drawing.Point(423, 32)
+        Me.vValueNumericUpDown.Name = "vValueNumericUpDown"
+        Me.vValueNumericUpDown.Size = New System.Drawing.Size(195, 26)
+        Me.vValueNumericUpDown.TabIndex = 8
+        '
         'UcNumberValuedComboBox
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Controls.Add(Me.vValueNumericUpDown)
         Me.Controls.Add(Me.vLabel)
-        Me.Controls.Add(Me.vValueTextBox)
         Me.Controls.Add(Me.vValueLabel)
         Me.Controls.Add(Me.vLookupComboBox)
         Me.Name = "UcNumberValuedComboBox"
         Me.Size = New System.Drawing.Size(866, 84)
+        CType(Me.vValueNumericUpDown, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
     Friend WithEvents vLabel As System.Windows.Forms.Label
-    Friend WithEvents vValueTextBox As System.Windows.Forms.TextBox
     Friend WithEvents vValueLabel As System.Windows.Forms.Label
     Friend WithEvents vLookupComboBox As System.Windows.Forms.ComboBox
+    Friend WithEvents vValueNumericUpDown As System.Windows.Forms.NumericUpDown
 
 End Class
